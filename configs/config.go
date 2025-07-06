@@ -23,8 +23,7 @@ func LoadConfig() {
 	viper.SetDefault("DATABASE_URL", "host=localhost user=postgres password=postgres dbname=crawlerx port=5432 sslmode=disable")
 	viper.SetDefault("REDIS_URL", "redis://localhost:6379/0")
 
-	err := viper.ReadInConfig()
-	if err != nil {
+	if err := viper.ReadInConfig(); err != nil {
 		log.Printf("Failed to load config: %v", err)
 	}
 
