@@ -15,7 +15,16 @@ services:
           type: redis
           name: crawlerx-redis
           property: connectionString
-      - fromGroup: crawlerx-env
+      - key: PORT
+        value: 8080
+      - key: LOG_LEVEL
+        value: info
+
+  # Redis service
+  - type: redis
+    name: crawlerx-redis
+    plan: free
+    ipAllowList: []
 
 # Database
 databases:
@@ -23,18 +32,3 @@ databases:
     plan: free
     databaseName: crawlerx
     user: postgres
-
-# Redis
-redis:
-  - name: crawlerx-redis
-    plan: free
-    ipAllowList: []
-
-# Environment variable groups
-envGroups:
-  - name: crawlerx-env
-    envVars:
-      - key: PORT
-        value: 8080
-      - key: LOG_LEVEL
-        value: info
