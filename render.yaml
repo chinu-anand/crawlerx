@@ -31,4 +31,3 @@ databases:
   - name: crawlerx-db
     plan: free
     databaseName: crawlerx
-    user: postgres
