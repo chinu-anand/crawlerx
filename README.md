@@ -26,29 +26,7 @@ CrawlerX is a robust, scalable web crawling system built in Go. It allows you to
 
 CrawlerX follows a clean, modular architecture that separates concerns and enables scalability:
 
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│             │     │             │     │             │
-│  API Layer  │────▶│  Job Queue  │────▶│   Workers   │
-│             │     │   (Redis)   │     │             │
-└─────────────┘     └─────────────┘     └─────────────┘
-       │                                       │
-       │                                       │
-       ▼                                       ▼
-┌─────────────┐                         ┌─────────────┐
-│             │                         │             │
-│  WebSocket  │◀────────────────────────│   Crawler   │
-│    Hub      │                         │             │
-└─────────────┘                         └─────────────┘
-       │                                       │
-       │                                       │
-       ▼                                       ▼
-┌─────────────┐                         ┌─────────────┐
-│             │                         │             │
-│   Clients   │                         │  Database   │
-│             │                         │(PostgreSQL) │
-└─────────────┘                         └─────────────┘
-```
+![CrawlerX Architecture](./crawlerx_architecture.png)
 
 ## ✨ Features
 
